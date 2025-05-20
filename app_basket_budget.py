@@ -481,7 +481,7 @@ def main():
         st.subheader("API Configuration Status")
         
         # Check for RapidAPI key
-        rapidapi_key = os.environ.get("RAPIDAPI_KEY")
+        rapidapi_key = os.environ.get("RAPIDAPI_KEY") or st.secrets.get("RAPIDAPI_KEY")
         if rapidapi_key and rapidapi_key != "your_rapidapi_key_here":
             st.success("✅ RapidAPI configured - using live cost of living data")
         else:
